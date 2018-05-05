@@ -1,0 +1,41 @@
+ {% extends "header.html" %}
+ 
+{% block body%} 
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+<div class="panel panel-primary">
+<div class="panel-heading"><center>Candidate tracker</center></div>
+<div class="panel body">
+<center><form  action="/testpage1/" class="form-panel" method="POST" style=" align:center; margin-left:20px; margin-top:20px">
+<h4>Choose information to show:</h4>
+<center><table>
+  <td></td>
+  <div id="checkbox-container">
+  <tr><td><label>NAME  </label></td>
+  <td><input type="checkbox" name="java" value="Name" {{var1}}> </td></tr>
+  
+ <tr><td><label>EXPERIENCE </label></td>
+ <td><input type="checkbox" name="java" value="Experience" {{var2}}> </td></tr>
+   <tr><td> <label>LOCATION</label></td>
+  <td> <input type="checkbox" name="java" value="location" {{var3}}></td></tr>
+   <tr><td> <label>DATE</label></td>
+  <td> <input type="checkbox" name="java" value="Date" {{var4}}></td></tr>
+	 <tr><td><label>SKILLS</label></td>
+	<td><input type="checkbox" name="java" value="Skills" {{var5}}> </td></tr>
+	 <tr><td><label>GENDER </label></td>
+	<td><input type="checkbox" name="java" value="Gender" {{var6}}></td></tr>
+  </div>
+  </tr>
+</table></center>
+<br>
+<a href="/testpage1/"><button onclick="goBack()" class="btn btn-primary" value="Back" style="width:200px">Back</button></a>
+<input  class="btn btn-primary" type="submit" value="Click to see details" style="width:200px"></input>
+</form></center>
+</div>
+</div>
+
+
+{%endblock%}

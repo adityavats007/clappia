@@ -1,0 +1,139 @@
+ {% extends "header.html" %}
+ 
+{% block body%} 
+<!--<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>-->
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+<div class="panel panel-primary">
+	<div class="panel-heading"><center>Candidate Tracker</center></div>
+	<div class="panel body">
+<form action="/nextpage/" method="POST">
+{%if i==0%}
+<table class="table table-striped" style=" margin-left:20px; margin-right:20px" >
+{%if i==0%}
+  <tr>
+<th rowspan="2">NAME</th>
+<th rowspan="2">EXPERIENCE</th>
+<th rowspan="2">LOCATION</th>
+<th rowspan="2">DATE</th>
+<th rowspan="2">GENDER</th>
+<th colspan="5" style="align:center"><center>SKILL</center></th>
+<tr>
+<th>JAVA</th>
+<th>PYTHON</th>
+<th>HTML</th>
+<th>CSS</th>
+<th>ANGULAR</th>
+ </tr>
+
+  </tr>
+ {% endif %}
+{% for x in x%}
+{%if i==0%}
+<tr>
+<td>{{x[0]}}</td>
+<td>{{x[1]}}</td>
+<td>{{x[2]}}</td>
+<td>{{x[3]}}</td>
+<td>{{x[9]}}</td>
+{%if x[4]=="JAVA"%}<td style="color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[5]=="PYTHON"%}<td style="color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[6]=="HTML"%}<td style="color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[7]=="CSS"%}<td style="color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[8]=="ANGULAR"%}<td style="color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+
+</tr>
+{% endif %}
+{% endfor %}
+</table>
+{% endif %}
+{%if i==1%}
+<table  class="table table-striped table-condensed table-responsive">
+<!--<tr>
+{% for l in l%}
+<th>{{l}}</th>
+{% endfor %}
+</tr>-->
+{%if i==1%}
+  <tr>
+{%if a0==1%}<th rowspan="2">NAME</th>{% endif %}
+{%if a1==1%}<th rowspan="2">EXPERIENCE</th>{% endif %}
+{%if a2==1%}<th rowspan="2">LOCATION</th>{% endif %}
+{%if a3==1%}<th rowspan="2">DATE</th>{% endif %}
+{%if a5==1%}<th rowspan="2">GENDER</th>{% endif %}
+{%if a4==1%}<th colspan="5" style="align:center"><center>SKILL</center></th>{% endif %} </tr>
+
+<tr>
+{%if a4==1%}
+<th>JAVA</th>
+<th>PYTHON</th>
+<th>HTML</th>
+<th>CSS</th>
+<th>ANGULAR</th>
+{% endif %}
+ </tr>
+
+
+ 
+  {% endif %}
+  {%if i==1%}
+{% for x in x%}
+{%if i==1%}
+<tr>
+{%if a0==1%}<td>{{x[0]}}</td>{% endif %}
+{%if a1==1%}<td>{{x[1]}}</td>{% endif %}
+{%if a2==1%}<td>{{x[2]}}</td>{% endif %}
+{%if a3==1%}<td>{{x[3]}}</td>{% endif %}
+{%if a5==1%}<td>{{x[9]}}</td>{% endif %}
+{%if a4==1%}{%if x[4]=="JAVA"%}<td style=" color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[5]=="PYTHON"%}<td style=" color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[6]=="HTML"%}<td style=" color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[7]=="CSS"%}<td style=" color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{%if x[8]=="ANGULAR"%}<td style=" color:#33cc33">&#x2714;</td>
+{% else %}<td style=" color:red">&#x274C;</td>
+{% endif %}
+{% endif %}
+</tr>
+{% endif %}
+{% endfor %}
+{% endif %}
+</table>
+{% endif %}
+<center><a href="/"><input class="btn btn-primary" value="Back" style="width:200px; align:left;"></a>
+
+<input class="btn btn-primary" type="submit" value="Next" style="width:200px; align:right;"></center>
+</form>
+</div>
+</div>
+
+{%endblock%}
