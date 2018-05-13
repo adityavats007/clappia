@@ -1,6 +1,7 @@
  {% extends "header.html" %}
  
 {% block body%} 
+
 <style>
 .onoffswitch {
     position: relative; width: 90px;
@@ -455,7 +456,7 @@ function goBack() {
 <div class="panel panel-primary">
 <div class="panel-heading"><center>Candidate tracker</center></div>
 <div class="panel body">
-<center><form  action="/testpage1/" class="form-panel" method="POST" style=" align:center; margin-left:20px; margin-top:20px">
+<center><form  onsubmit="return exefunction()" action="/testpage1/" class="form-panel" method="POST" style=" align:center; margin-left:20px; margin-top:20px">
 <h4>Choose information to show:</h4>
 <center><table>
   <td></td>
@@ -516,7 +517,7 @@ function goBack() {
 </table></center>
 <br>
 <a href="/testpage1/"><button onclick="goBack()" class="btn btn-primary" value="Back" style="width:200px">Back</button></a>
-<input  class="btn btn-primary" type="submit" value="Click to see details" style="width:200px"></input>
+<a href="#" onclick="exefunction()"><input class="btn btn-primary" type="submit" value="Click to see details" style="width:200px"></input></a>
 </form></center>
 </div>
 </div>
@@ -531,5 +532,27 @@ function goBack() {
 
 
 </div>
+<script>
+function exefunction(){
+var a2 = document.getElementById("myonoffswitch2").checked;
+var a3 = document.getElementById("myonoffswitch3").checked;
+var a4 = document.getElementById("myonoffswitch4").checked;
+var a5 = document.getElementById("myonoffswitch5").checked;
+var a7 = document.getElementById("myonoffswitch7").checked;
+var a6 = document.getElementById("myonoffswitch6").checked;
+if(a2==false && a3==false && a4==false && a5==false && a6==false && a7==false )
+{
+
+alert("Make Atleast One Selection");
+return false;
+
+}
+
+
+
+
+
+}
+</script>
 
 {%endblock%}
